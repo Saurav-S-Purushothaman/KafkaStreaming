@@ -3,11 +3,12 @@
 #imports
 import time
 import cv2
-from kafka import SimpleProducer, KafkaClient
+from kafka import KafkaClient
+from kafka import KafkaProducer
 
 # connect to kafka
-kafka = KafkaClient("localhost:9092")
-producer = SimpleProducer(kafka)
+kafka = KafkaClient(bootstrap_servers ="localhost:9092")
+producer = KafkaProducer(kafka)
 
 # assign a topic 
 topic = "mytopic"
